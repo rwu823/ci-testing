@@ -11,5 +11,7 @@ if (TRAVIS_BRANCH === 'dev') {
   console.log('deploying to aws......')
 
   exec(`git tag ${tag}`)
-  exec(`git push ${repoToken} ${tag}`)
+  exec(`git push ${repoToken} ${tag}`, {
+    silent: true,
+  })
 }
