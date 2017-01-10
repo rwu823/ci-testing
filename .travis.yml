@@ -2,3 +2,6 @@ language: node_js
 node_js:
   - v7
 
+env:
+  - TEST_SUITE=units
+  - TEST_SUITE=integration
