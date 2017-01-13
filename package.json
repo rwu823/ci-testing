@@ -5,14 +5,15 @@
   "repository": "https://github.com/rwu823/ci-testing.git",
   "scripts": {
     "lint": "eslint src",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "build": "node scripts/build"
   },
   "author": "RoCky Wu <rocky823@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-eslint": "^7.1.1",
-    "babel-preset-env": "^1.1.7",
+    "babel-preset-env": "^1.1.8",
     "eslint": "^3.13.1",
     "jest-cli": "^18.1.0",
     "shelljs": "^0.7.6"
