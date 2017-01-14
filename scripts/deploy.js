@@ -12,7 +12,7 @@ if (TRAVIS_BRANCH === 'dev' && TRAVIS_MATRIX === 'build') {
   exec(`git config --global user.name "CircleCI"`)
 
   exec(`git tag ${tag}`)
-  exec(`git push ${repoToken} ${tag}`, {
+  exec(`git push ${repository} ${tag}`, {
     // silent: true,
   })
 }
