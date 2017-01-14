@@ -13,7 +13,7 @@ if (TRAVIS_BRANCH === 'dev' && TRAVIS_MATRIX === 'build') {
 
   exec(`git tag ${tag}`)
   exec(`git push ${repoToken} ${tag}`, {
-    silent: true,
+    // silent: true,
   })
 }
 
