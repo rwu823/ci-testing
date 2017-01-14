@@ -1,9 +1,9 @@
 require('shelljs/global')
 
-const { PARALLEL_NODE } = process.env
+const { TRAVIS_NODE } = process.env
 
 const cmds = [
-  'npm test && curl -s https://codecov.io/bash | bash',
+  'npm test',
   'npm run lint',
   'npm run build',
 ]

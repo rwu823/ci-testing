@@ -4,32 +4,15 @@ node_js:
   - v7
 
 env:
-  - PARALLEL_NODE=0
-  - PARALLEL_NODE=1
-  - PARALLEL_NODE=2
+  - TRAVIS_MATRIX=lint
+  - TRAVIS_MATRIX=test
+  - TRAVIS_MATRIX=build
 
 script:
-  - node scripts/parallel-test
+  - npm run $TRAVIS_MATRIX
 
 after_success:
-  - |
-    declare exitCode
-
-    curl -sSL https://unpkg.com/travis-after-all | node
-    exitCode=$?
-
-    if [ $exitCode -eq 0 ]; then
-      echo "after_all_Succes"
-    fi
-
-    if [ $exitCode -eq 1 ]; then
-      echo "after_all_Failure"
-    fi
-#  - curl -s https://codecov.io/bash | bash
-#  - git config --global user.email "auto_deploy@circleci.com"
-#  - git config --global user.name "CircleCI"
-#  - echo -e "cepave\n${NPM_PASSWD}\nrwu@cepave.com" | npm login
-#  - babel-node scripts/deploy.js
+  - node scripts/deploy.js
 
 branches:
   except:
