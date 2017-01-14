@@ -1,19 +1,18 @@
 language: node_js
-
 node_js:
   - v7
-
 env:
-  - TRAVIS_MATRIX=lint
-  - TRAVIS_MATRIX=test
-  - TRAVIS_MATRIX=build
-
+  matrix:
+    - TRAVIS_MATRIX=lint
+    - TRAVIS_MATRIX=test
+    - TRAVIS_MATRIX=build
+  global:
+    - secure: >-
+        Dusj/6ycEYqqby8R8muVLjZ4OAAlAVb9LGVCOypopjD5SYmMd65ZEZkyWTlK6Pun+naCsMkHyFHa04FDbIddbMZDhqv2L2YCca8fBbi5zvTUCZfg+qiF31nOT9FUjejtLgTWGKgFu5Hb6RJbVxEEmSWd/7EED9a8E/PELWyM5m/H7XNnybDfrqvclqgdCriNYGjV8/yx+7Y0fIyqe/b5bdD16HA0HfFjJgKKTbPVA79m+HNJ4E24hmSYj6iDg+fnX8iXqbaHneaoeOGp9oDwAi6868zkUVFe64sTzevh0q3XILdeb15eXsJoqTl5lLrchifJCTKbYO9A53u6qWz4kr7F91GoYzqHASx6ygTAdQDIeKQP6yNML18t3tehQxIVlzrnk/Dt4jaUk27w6hk7+Gpr0xvT3jrEMA6IczVUa0SqrBdrcKkgz4y5rOXBOh3Asxuh355QC5/41nNe9QV9VDEcA0Q4rzXVRoKFcgO7nmzFOkn45ZHT9O2xFJ4U26DyXYtSKgwIM+MshgK3TgXbBNf1ynJeVIc58xZ1VY1Ti9cWxsMl9ylFarT0yTiE8YoNE80VYxD9n7i5SuYJ6VHOkYBQjwFtW/T3jUXA1+nVn0N5qAeMvWppbhQfZFeKxkJOslLsjqDPJJi0mOSb+cijbzf/URjQRtfeOIGZrprktLc=
 script:
   - npm run $TRAVIS_MATRIX
-
 after_success:
   - node scripts/deploy.js
-
 branches:
   except:
-  - /v?\d+\.\d+\.\d+/
+    - /v?\d+\.\d+\.\d+/
