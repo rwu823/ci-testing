@@ -1,6 +1,6 @@
 {
   "name": "ci-testing",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "index.js",
   "repository": "https://github.com/rwu823/ci-testing.git",
   "scripts": {
